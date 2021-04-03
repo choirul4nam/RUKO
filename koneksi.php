@@ -2,11 +2,12 @@
   $server = "localhost";
   $user = "root";
   $password = "";
-  $dbname = "RAKO";
+  $dbname = "rako";
 
-  $db = mysql_connect($server, $user, $password, $dbname);
+  $db = mysqli_connect($server, $user, $password, $dbname);
 
-  if( !$db ){
-    die("error: " . mysql_connect_error());
+  if (mysqli_connect_errno()){
+    echo "Koneksi database gagal : " . mysqli_connect_error();
   }
 ?>
+
