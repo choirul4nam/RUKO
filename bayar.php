@@ -33,4 +33,5 @@ while($f = mysqli_fetch_array($e)){
     
 }
 mysqli_query($db,"DELETE FROM transaksi_dummy");
-header("Location: transaksi.php");
+header("Location: cetak2.php?id=$d[id]");
+// header("Location: transaksi.php");

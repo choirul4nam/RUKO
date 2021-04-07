@@ -141,6 +141,9 @@
                     <ul class="navbar-nav ml-auto">
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
+                        <a class="btn btn-secondary" href="fp.php">
+                            Lupas Password
+                         </a>
                         <a class="btn btn-primary" href="logout.php" data-toggle="modal" data-target="#logoutModal">
                             Logout
                          </a>
@@ -179,7 +182,17 @@
              <tr>
                 <td>Peran</td>
                 <td>:</td>
-                <td><input type="text" class="form-control" name="pr" id="pr" value="<?= $d['peran'] ?>"></td>
+                <td><select name="pr" id="pr" class="form-control">
+                                    <?php if($d['peran'] == 'admin') { ?>
+                                        <option value="admin" selected>Admin</option>
+                                        <option value="kasir">Kasir
+                                    <?php } else { ?>
+                                        <option value="admin">Admin</option>
+                                        <option value="kasir" selected>Kasir
+                                    <?php } ?>
+                                    
+                                                
+                                                </option><select></td>
         </table>
                     <input type="submit" class="btn btn-success" value="Simpan">
                     <a href="kategori.php" class="btn btn-primary">Kembali</a>

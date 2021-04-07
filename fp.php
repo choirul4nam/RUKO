@@ -1,5 +1,5 @@
-
 <?php 
+    session_start();
     require "koneksi.php";
 ?>
 <!-- <!DOCTYPE html>
@@ -39,7 +39,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Transaksi</title>
+    <title>Lupa Password</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -49,6 +49,7 @@
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
+
 </head>
 
 <body id="page-top">
@@ -114,6 +115,7 @@
                     <span>Data Penjualan</span></a>
             </li>
             
+            
 
             <!-- Sidebar Toggler (Sidebar) -->
             <div class="text-center d-none d-md-inline">
@@ -135,15 +137,14 @@
                     <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
                         <i class="fa fa-bars"></i>
                     </button>
-                    <h1 class="h3 mb-0 text-gray-800">Transaksi	</h1>
+                    <h1 class="h3 mb-0 text-gray-800">Lupa Password</h1>
 
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <!-- Nav Item - User Information -->
-
                         <li class="nav-item dropdown no-arrow">
                         <a class="btn btn-secondary" href="fp.php">
-                            Lupa Password
+                            Lupas Password
                          </a>
                         <a class="btn btn-primary" href="logout.php" data-toggle="modal" data-target="#logoutModal">
                             Logout
@@ -156,97 +157,25 @@
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
-					<div class="col-sm-4">
-						<div class="panel panel-primary">
-								<div class="panel-heading">
-									<h4> Cari Barang</h4>
-								</div>
-								<div class="panel-body">
-									<input type="text" id="cari" class="form-control" name="cari" placeholder="Masukan Nama Barang">
-								</div>
-							</div>
-						</div>
-						
-						<table width="100%"  class="table table-striped table-hover mt-5">
-								<thead>
-									<tr>
-										<td align="center">Nama Barang</td>	
-										<td align="center">Harga</td>	
-										<td align="center">Stok</td>	
-										<td align="center">Aksi</td>	
-									</tr>
-								</thead>
-								<tbody>
-									<tr id="daa">
-										
-									</tr>
-								</tbody>
-						</table>
-						<hr>
-						<div class="panel panel-primary">
-								<div class="panel-heading">
-									<h4>Keranjang</h4>
-								</div>
-                                <table width="100%"  class="table table-striped table-hover mt-5">
-                                    <thead>
-                                        <tr>
-                                            <td align="center">Nama Barang</td>	
-                                            <td align="center">Jumlah</td>	
-                                            <td align="center">Total</td>	
-                                            <td align="center">Aksi</td>	
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <?php 
-                                            $b = mysqli_query($db, "SELECT * FROM transaksi_dummy");
-                                            while ($c = mysqli_fetch_array($b)) {
-                                        ?>
-                                            <tr>
-                                                <td align="center"><?= $c['nama_barang'] ?></td>
-                                                <form action="aksi_transaksi.php" method="post">
-                                                <td align="center"><input type="number" name="j" id="j" class="form-control" id value="<?= $c['jumlah'] ?>"/></td>	
-                                                <td align="center"><?= $c['total'] ?></td>	
-                                                <td align="center">
-                                                    <input type="hidden" value="<?= $c['id_barang'] ?>" name="idbarang" id="idbarang"/>
-                                                    <input type="hidden" value="ubah" name="type" id="type"/>
-                                                    <input type="submit" class="btn btn-success" value="update"/>
-                                                </form>
-                                                    <a href="aksi_transaksi.php?type=hapus&idbarang=<?= $c['id_barang'] ?>" class="btn btn-danger">Hapus</a>
-                                                </td>
-                                            </tr>
-                                        <?php } ?>
-        
-                                    </tbody>
-                                </table>
-                                <?php 
-                                    $s = mysqli_query($db, "SELECT SUM(total) as total FROM transaksi_dummy");
-                                    $d = mysqli_fetch_array($s);
-
-                                ?>
-                                <form action="bayar.php" method="post">
-                                <h3>Total Semua = Rp. <?= $d['total'] ?></h3>
-                                <input class="form-control" type="hidden" value="<?= $d['total'] ?>" name="t" id="t"/>
-                                <table>
-                                    <tr>
-                                        <td>Bayar</td>
-                                        <td>:</td>
-                                        <td><input class="form-control" type="number" name="b" id="b"/></td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td id="kkk"></td>
-                                        <td>:</td>
-                                        <td><input class="form-control" type="number" name="k" id="k"/></td>
-                                        <!-- <td><a class="btn btn-primary ml-2" id="uk">Update</a></td> -->
-                                    </tr>
-                                </table>
-                                <a href="resetKeranjang.php" class="btn btn-danger mt-2 mb-5 mr-2" id="aaaa">Reset Keranjang</a>
-                                <input type="submit" class="btn btn-success mt-2 mb-5" value="Bayar"/>
-                                </form>
-							</div>
-						</div>
-					</div>		
-                </div>
+                                    <form class="user" action="forgot_proses.php" method="post">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control form-control-user"
+                                                id="pl" name="pl" aria-describedby="emailHelp"
+                                                placeholder="Password Lama ">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="password" class="form-control form-control-user"
+                                                id="pb" name="pb" placeholder="Password Baru">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="password" class="form-control form-control-user"
+                                                id="up" name="up" placeholder="Ulangi Password">
+                                        </div>
+                                        
+                                        <input type="submit" class="btn btn-primary btn-user btn-block" value="Simpan">
+                                    </form>
+                                    <?= @$_SESSION['message'] ?>
+                                </div>
             </div>
             <!-- End of Main Content -->
 
@@ -303,49 +232,6 @@
     <!-- Page level custom scripts -->
     <script src="js/demo/chart-area-demo.js"></script>
     <script src="js/demo/chart-pie-demo.js"></script>
-	<script>
-		$('#cari').change(function(){
-			data = this.value
-			$('#daa').html('')
-			$.ajax({
-				url: 'get_barang.php?name='+data,
-				type: 'GET',
-				success: function(result){
-					let data = JSON.parse(result)
-					$('#daa').append("<td align='center'>"+ data['nama_barang'] +"</td>")
-					$('#daa').append("<td align='center'>"+ data['harga'] +"</td>")
-					$('#daa').append("<td align='center'>"+ data['stok'] +"</td>")
-					$('#daa').append(`<td align='center'>
-								<form action="tambahKeranjang.php" method="post">
-									<input type="hidden" name="idbrang" id="idbrang" value="`+ data['id_barang'] +`">
-                                    <input type="hidden" name="nb" id="nb" value="`+ data['nama_barang'] +`">
-                                    <input type="hidden" name="j" id="j" value="1">
-                                    <input type="hidden" name="t" id="t" value="`+ data['harga'] +`">
-									<input type="submit" class="btn btn-primary" value="Tambah"/>
-								</form>
-							</td>`)
-				
-				}
-			})
-		})
-        $('#b').change(function(){
-            
-            t = $('#t').val()
-            b = $('#b').val()
-            if(parseInt(b) > parseInt(t)){
-                $('#kkk').html(`<td id="kkk">Kelebihan</td>`)
-                $('#k').val(b-t)
-                
-            } else if(parseInt(b) == parseInt(t)) {
-                $('#kkk').html(`<td id="kkk">Kelebihan</td>`)
-                $('#k').val('0')
-            } else if(parseInt(b) < parseInt(t)){
-                $('#kkk').html(`<td id="kkk">Kekurangan</td>`)
-                $('#k').val(t-b)
-            }
-        
-        })
-	</script>
 
 </body>
 

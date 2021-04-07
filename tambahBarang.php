@@ -1,9 +1,6 @@
 <?php 
     require "koneksi.php";
 ?>
-<?php 
-    require "koneksi.php";
-?>
 <!-- <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -145,6 +142,9 @@
                     <ul class="navbar-nav ml-auto">
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
+                        <a class="btn btn-secondary" href="fp.php">
+                            Lupas Password
+                         </a>
                         <a class="btn btn-primary" href="logout.php" data-toggle="modal" data-target="#logoutModal">
                             Logout
                          </a>

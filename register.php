@@ -38,9 +38,14 @@
                             <div class="col-lg-12">
                                 <div class="p-5">
                                     <div class="text-center">
-                                        <h1 class="h4 text-gray-900 mb-4">Login</h1>
+                                        <h1 class="h4 text-gray-900 mb-4">Register</h1>
                                     </div>
-                                    <form class="user" action="login_proses.php" method="post">
+                                    <form class="user" action="register_proses.php" method="post">
+                                    <div class="form-group">
+                                            <input type="text" class="form-control form-control-user"
+                                                id="username" name="username" aria-describedby="emailHelp"
+                                                placeholder="Username">
+                                        </div>
                                         <div class="form-group">
                                             <input type="email" class="form-control form-control-user"
                                                 id="email" name="email" aria-describedby="emailHelp"
@@ -51,19 +56,16 @@
                                                 id="password" name="password" placeholder="Password">
                                         </div>
                                         <div class="form-group">
-                                            <div class="custom-control custom-checkbox small">
-                                                <input type="checkbox" class="custom-control-input" id="customCheck">
-                                               
-                                            </div>
+                                            <select class="form-control" name="peran" id="peran" class="peran">
+                                                <option value="admin">Admin</option>
+                                                <option value="kasir">Kasir</option>
+                                            </select>
                                         </div>
                                         <input type="submit" class="btn btn-primary btn-user btn-block" value="Simpan">
                                     </form>
                                     <hr>
                                     <div class="text-center">
-                                        <a class="small" href="fp.php">Forgot password</a>
-                                    </div>
-                                    <div class="text-center">
-                                        <a class="small" href="register.php">Register user</a>
+                                        <a class="small" href="login.php">Sudah punya akun</a>
                                     </div>
                                 </div>
                             </div>

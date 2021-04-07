@@ -145,6 +145,9 @@
                     <ul class="navbar-nav ml-auto">
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
+                        <a class="btn btn-secondary" href="fp.php">
+                            Lupas Password
+                         </a>
                         <a class="btn btn-primary" href="logout.php" data-toggle="modal" data-target="#logoutModal">
                             Logout
                          </a>
@@ -183,7 +186,7 @@
 										echo "<td align='center'>$c[total]</td>";
 										echo "<td align='center'>$c[bayar]</td>";
 										echo "<td align='center'>$c[kembalian]</td>";
-										echo "<td align='center'><a href='detilpenjualan.php?id=$c[id]' class='btn btn-primary'>Detail</a></td>";
+										echo "<td align='center'><a href='detilpenjualan.php?id=$c[id]' class='btn btn-primary'>Detail</a><a href='cetak.php?id=$c[id]' class='btn btn-success ml-2' target='_blank'>Cetak</a></td>";
 										echo "</tr>";
 									}
 									?>

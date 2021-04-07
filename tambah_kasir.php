@@ -141,6 +141,9 @@
                     <ul class="navbar-nav ml-auto">
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
+                        <a class="btn btn-secondary" href="fp.php">
+                            Lupas Password
+                         </a>
                         <a class="btn btn-primary" href="logout.php" data-toggle="modal" data-target="#logoutModal">
                             Logout
                          </a>
@@ -173,7 +176,8 @@
             <tr>
                 <td>Peran</td>
                 <td>:</td>
-                <td><input type="text" class="form-control"name="pr" id="pr"></td>
+                <td> <select name="pr" id="pr" class="form-control"><option value="admin">Admin</option>
+                                                <option value="kasir">Kasir</option><select></td>
             </tr>
         </table>
                     <input type="submit" class="btn btn-success" value="Simpan">

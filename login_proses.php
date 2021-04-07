@@ -7,7 +7,7 @@ $pass = @$_POST['password'];
 $a = mysqli_query($db, "SELECT * FROM kasir WHERE email='$email' and passwd='$pass'");
 $b = mysqli_fetch_array($a);
 if(mysqli_num_rows($a) != 0){
-    $_SESSION['user'] = array("email"=>$email,"password"=>$pass,"peran"=>$b['peran']);
+    $_SESSION['user'] = array("iduser"=>$b['id_kasir'],"email"=>$email,"password"=>$pass,"peran"=>$b['peran']);
     if($b['peran'] == 'admin'){
         header("Location: index.php");
     } else {
