@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Login</title>
+    <title>Lupa Password</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -38,31 +38,34 @@
                             <div class="col-lg-12">
                                 <div class="p-5">
                                     <div class="text-center">
-                                        <h1 class="h4 text-gray-900 mb-4">Login</h1>
+                                        <h1 class="h4 text-gray-900 mb-4">Lupa Password</h1>
                                     </div>
-                                    <form class="user" action="login_proses.php" method="post">
+                                    
+                                    <form class="user" action="forgot_proses.php" method="post">
                                         <div class="form-group">
                                             <input type="email" class="form-control form-control-user"
-                                                id="email" name="email" aria-describedby="emailHelp"
-                                                placeholder="Email ">
+                                                id="e" name="e" aria-describedby="emailHelp"
+                                                placeholder="Email">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control form-control-user"
+                                                id="pl" name="pl" aria-describedby="emailHelp"
+                                                placeholder="Password Lama ">
                                         </div>
                                         <div class="form-group">
                                             <input type="password" class="form-control form-control-user"
-                                                id="password" name="password" placeholder="Password">
+                                                id="pb" name="pb" placeholder="Password Baru">
                                         </div>
                                         <div class="form-group">
-                                            <div class="custom-control custom-checkbox small">
-                                                <input type="checkbox" class="custom-control-input" id="customCheck">
-                                            </div>
+                                            <input type="password" class="form-control form-control-user"
+                                                id="up" name="up" placeholder="Ulangi Password">
                                         </div>
+                                        
                                         <input type="submit" class="btn btn-primary btn-user btn-block" value="Simpan">
                                     </form>
                                     <hr>
                                     <div class="text-center">
-                                        <a class="small" href="lp.php">Lupa Password</a>
-                                    </div>
-                                    <div class="text-center">
-                                        <a class="small" href="register.php">Register user</a>
+                                        <a class="small" href="login.php">Login user</a>
                                     </div>
                                 </div>
                             </div>
