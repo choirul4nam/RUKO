@@ -59,9 +59,7 @@
                                         <input type="submit" class="btn btn-primary btn-user btn-block" value="Simpan">
                                     </form>
                                     <hr>
-                                    <div class="text-center">
-                                        <a class="small" href="fp.php">Forgot password</a>
-                                    </div>
+                    
                                     <div class="text-center">
                                         <a class="small" href="register.php">Register user</a>
                                     </div>
